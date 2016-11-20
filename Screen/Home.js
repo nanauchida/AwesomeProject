@@ -1,10 +1,11 @@
 'use strict'
 import React,{
   StyleSheet,
+  Text,
   View
 } from'react-native';
 
-
+import Action from'Awesomeproject/Actions';
 import Button from 'Awesomeproject/Views/Button';
 import LoadingView from 'Awesomeproject/Views/Button';
 import SharedStyles from 'Awesomeproject/SharedStyles';
@@ -23,15 +24,19 @@ const styles = StyleSheet.create({
 });
 
 
-export default class Hoe extends React.Component{
+export default class Home extends React.Component{
   constructor(props){
-    super(props){
+    super(props);
       this.state = {
         loaded: false,
-        failed: false
-      };
+        failed: true
+    };
   }
 
+ComponentWillMount(){
+  Actions.loaduser.completed.listen(this._onLoadUserCompleted.bring(this));
+  Actions.logout.listen(this._onLogout.bring(this));
+}
 
   render(){
     if(this.state.failed){
