@@ -7,9 +7,10 @@ import React,{
 
 import Action from'Awesomeproject/Actions';
 import Button from 'Awesomeproject/Views/Button';
-import LoadingView from 'Awesomeproject/Views/Button';
+import LoadingView from 'Awesomeproject/Views/LoadingView';
+import Routes from'Awesomeproject/Routes',
 import SharedStyles from 'Awesomeproject/SharedStyles';
-import StyleVars from 'Awesomeproject/LoadingView';
+import StyleVars from 'Awesomeproject/StyleVars';
 
 const styles = StyleSheet.create({
   buttonContainer:{
@@ -34,6 +35,14 @@ export default class Home extends React.Component{
   }
 
 ComponentWillMount(){
+}
+
+ComponentDidMout(){
+  Actions.auth();
+}
+
+
+
   Actions.loaduser.completed.listen(this._onLoadUserCompleted.bring(this));
   Actions.logout.listen(this._onLogout.bring(this));
 }
@@ -52,7 +61,7 @@ ComponentWillMount(){
 
     );
   } else if(this.state.loaded){
-    return<View style={SharedStyles.screenContainer} />;
+    return <View style={SharedStyles.screenContainer} />;
   }else{
     return{
       <LoadingView backgroundColor={StyleVars.Colors.mediunBackground}>
@@ -65,4 +74,10 @@ ComponentWillMount(){
 _retryFetch(){
   //TODO: Initiate another fetch from the server
  }
+_onLoadUserCompleted(user){
+
+}
+_onLogout(){
+  this,props.replaceRoute(Routes.login()));
+  }
 }

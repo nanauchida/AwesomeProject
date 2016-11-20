@@ -1,3 +1,4 @@
+'use strict';
 import React,{
   ActivityIndicatorIOS,
   PropTypes,
@@ -23,10 +24,11 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class Loading extends React.Component{
+export default class LoadingView extends React.Component{
   render(){
-    let containerStyle = {backgroundColor: this.props.backgroundColor };
-
+    if(this.props.backgroundColor)
+    var containerStyle = {backgroundColor: this.props.backgroundColor };
+    
     return(
        <View Style={[style.container, containerStyle]}>
        <ActivityIndicatorIOS color={StyleVars.Colors.promary} />
