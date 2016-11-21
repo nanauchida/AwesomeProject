@@ -28,7 +28,7 @@ export default class LoadingView extends React.Component{
   render(){
     if(this.props.backgroundColor)
     var containerStyle = {backgroundColor: this.props.backgroundColor };
-    
+
     return(
        <View Style={[style.container, containerStyle]}>
        <ActivityIndicatorIOS color={StyleVars.Colors.promary} />

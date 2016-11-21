@@ -1,6 +1,7 @@
 'use strict';
 import React,{
   StyleSheet,
+  PropTypes,
   Text,
   TouchableOpacity
 }from 'react-native';
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     paddingVertical: 9,
     paddingHorizontal: 15,
     overflow:"hidden",
-    backgroundColor: StuleVars. Colors.primary
+    backgroundColor: StyleVars.Colors.primary
   },
   buttonText:{
     color: "white",
@@ -36,19 +37,18 @@ export default class Button extends React.Component{
     return(
     <TounchableOpacity
     activeOpacity={this.props.activeOpacity}
-    onPress={() => this.onPresS()}
+    onPress={() => this.onPress()}
     style={styles.button}
   >
 
-  <Text style= [textStyle}>{this.props.children}</Text>
-    </TouchableOpacity>
-   );
-  }
+     <Text style={textStyle}>{this.props.children}</Text>
+   </TouchableOpacity>
+ );
 }
 
 onPress(){
-if(this.props.enabled){
-  this.props.onPress();
+  if(this.props.enabled){
+    this.props.onPress();
     }
   }
 }
@@ -60,16 +60,15 @@ Button.propTypes = {
   activeOpacity: propTypes.number,
   enabled: propTypes.bool,
   children: propTypes.strign
-};
+}
 
 Button.defaultProps = {
-  onPress:() => {},
-  style
-  textStyle:{},
+  onPress: () => {},
+  style: {},
+  textStyle: {},
   activeOpacity: 0.8,
   enbaled: true
-
-
 };
+
 
 export default Button;
