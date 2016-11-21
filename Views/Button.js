@@ -8,8 +8,8 @@ import React,{
 
 import StyleVars from 'Awesomeproject/StyleVars';
 
-const styles = StyleSheet.create9{
-  button:[
+const styles = StyleSheet.create({
+  button:{
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
