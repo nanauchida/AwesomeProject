@@ -13,7 +13,7 @@ import SharedStyles from 'Awesomeproject/SharedStyles';
 
 
 const styles = StyleSheet.create({
-  sceneContainer:{
+  sceneContainer: {
     flex: 1,
     paddingTop:  Navigator.navigationBar.Styles.General.TotalNavHeight
   },
@@ -57,7 +57,7 @@ const NavigationBarRouteMapper = {
   }
 };
 
-export default class RootNavigator extends React.Component{
+export default class RootNavigator extends React.Component {
     constructor(props){
     super(props){
       this.state = { hideNavigationBar: false };
@@ -69,7 +69,7 @@ export default class RootNavigator extends React.Component{
 
     componetWillUnmount(){
       if (this._listeners)
-      this._listners.forEach((listener)=> listener.remove()));
+      this._listners.forEach((listener)=> listener.remove());
       }
 
 

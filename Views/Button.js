@@ -3,9 +3,10 @@ import React,{
   StyleSheet,
   Text,
   TouchableOpacity
-}from 'react-native'
+}from 'react-native';
 
-impot StyleVars from 'Awesomeproject/StyleVars';
+
+import StyleVars from 'Awesomeproject/StyleVars';
 
 const styles = StyleSheet.create9{
   button:[
