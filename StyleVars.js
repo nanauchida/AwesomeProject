@@ -1,16 +1,16 @@
 export default{
-  Colors:{
-    prmary: "rgb(42, 55, 68)",
+  Colors: {
+    primary: "rgb(42, 55, 68)",
     secondary:"rgb(130, 181, 65)",
     navBarBackground: "rgb(42, 55, 68)",
     navBarTitle: "white",
     lightBackground: "rgb(250, 250, 250)",
-    mdeiumBackground: "rgb(240, 240, 240)",
-    darkBackground: "rgb(200, 200, 200)",
+    mediumBackground: "rgb(240, 240, 240)",
+    darkBackground: "rgb(200, 200, 200)"
   },
 
-  Fouts:{
+  Fots:{
     logo:"Arial",
-    general:"Roboto"
+    general:"Roboto"ShareStyle.js
   }
 }
