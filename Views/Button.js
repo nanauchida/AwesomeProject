@@ -35,23 +35,23 @@ export default class Button extends React.Component{
     let textStyle = [styles.buttonText, this.props.textStyle];
 
 
-    return(
-    <TouchableOpacity
-    activeOpacity={this.props.activeOpacity}
-    onPress={() => this.onPress()}
-    style={styles.button}
-    >
+  　 return(
+     <TouchableOpacity
+     activeOpacity={this.props.activeOpacity}
+     onPress={() => this.onPress()}
+     style={styles.button}
+     >
 
      <Text style={textStyle}>{this.props.children}　</Text>
-   </TouchableOpacity>
- );
-}
+   　</TouchableOpacity>
+ 　　);
+　}
 
-onPress(){
-  if(this.props.enabled){
-    this.props.onPress();
-    }
-  }
+　onPress(){
+　　if(this.props.enabled){
+　  　 this.props.onPress();
+  　}
+　}
 }
 
 Button.propTypes = {
