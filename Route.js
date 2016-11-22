@@ -34,12 +34,11 @@ class Routes {
       leftButton: LogoutButton,
       rightButtom: PostButton,
       hideNavigationBar: false,
-      StatusBarStyle: "Light-content"
+      StatusBarStyle: "light-content"
     }
   }
-
-  login(){
-    return{}
+}
+\
   }
 }
 

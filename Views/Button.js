@@ -30,20 +30,20 @@ const styles = StyleSheet.create({
 });
 
 
-export default class Button extends React.Component{
+class Button extends React.Component{
   render(){
-    let textStyle = [styles.buttonText, this.props.textStyle];
+      let textStyle = [styles.buttonText, this.props.textStyle];
 
 
   　 return(
-     <TouchableOpacity
-     activeOpacity={this.props.activeOpacity}
-     onPress={() => this.onPress()}
-     style={styles.button}
-     >
+      <TouchableOpacity
+      activeOpacity={this.props.activeOpacity}
+      onPress={() => this.onPress()}
+      style={styles.button}
+      >
 
-     <Text style={textStyle}>{this.props.children}　</Text>
-   　</TouchableOpacity>
+      <Text style={textStyle}>{this.props.children}　</Text>
+   　 </TouchableOpacity>
  　　);
 　}
 

@@ -2,14 +2,14 @@
 import React,{
   Text,
   TouchableOpacity
-}from 'react-native';
+} from 'react-native';
 
-export default class LogoutButton extends React.Coponent{
+export default class LogoutButton extends React.Component{
   render(){
     let style = { marginLeft: 10, color: "white"};
 
     return (
-      <TouchableOpacity style={this.props.style}
+      <TouchableOpacity
       style={this.props.style}
       activeOpacity={0.5}
       onPress= {() => this.onPress()}

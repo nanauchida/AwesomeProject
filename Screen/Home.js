@@ -13,23 +13,23 @@ import SharedStyles from 'Awesomeproject/SharedStyles';
 import StyleVars from 'Awesomeproject/StyleVars';
 
 const styles = StyleSheet.create({
-  buttonContainer:{
-    paddingTop:96,
+  buttonContainer: {
+    paddingTop: 96,
     alignItem: "center"
   },
-  reloadText:{
+    reloadText:{
     textAlingn: "center",
     marignVertical: 20
   },
   button:{ width:256 }
 });
 
-export default class Home extends React.Component{
+export default class Home extends React.Component {
   constructor(props){
     super(props);
       this.state = {
         loaded: false,
-        failed: true  
+        failed: true
     };
   }
 

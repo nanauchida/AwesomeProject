@@ -4,9 +4,8 @@ import React  {
   View
 } from 'react-native';
 
-import RootNavigator from 'Awesomeproject/Views/RootNavigator';
-
-conole.disableYellowBox = true;
+  import RootNavigator from 'Awesomeproject/Views/RootNavigator';
+  conole.disableYellowBox = true;
 
 const styles = StyleSheet.create({
   container;{
@@ -28,4 +27,4 @@ class Awesomeproject React.Component {
     );
   }
 }
-React.AppRegistry.registerComponent('AwesomeProject', () => Social3);
+React.AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject3);
