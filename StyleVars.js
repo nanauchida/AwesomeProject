@@ -9,7 +9,7 @@ export default{
     darkBackground: "rgb(200, 200, 200)"
   },
 
-  Fots:{
+  Fonts:{
     logo:"Arial",
     general:"Roboto"ShareStyle.js
   }
