@@ -1,11 +1,12 @@
 'use strict';
-import Home from 'Awesomeproject/Screens/Home'
+import Home from 'Awesomeproject/Screens/Home';
+import Login from 'Awesomeproject/Screens/Login';
 import LogoutButton from 'Awesomeproject/Views/LogoutButton';
 import PostButton from 'Awesomeproject/Views/LogoutButton';
 
 class Routes {
   get(route, args){
-    if("Underfined" == typeof this[route]){
+    if("underfined" == typeof this[route]){
       console.warn("No route found with name: " + route);
       return false;
     }else{
@@ -13,7 +14,7 @@ class Routes {
     }
   }
 
-  home()
+  home(){
   return {
     name: "home",
     title: "Tuts + Awesomeproject",
@@ -21,8 +22,24 @@ class Routes {
     leftButton: LogoutButton,
     rightButtom: post,
     hideNavigationBar: false,
-    StatusBarStyle: "light-content"
+    StatusBarStyle: "Light-content"
     }
+  }
+
+  login() {
+    return {
+      name: "home",
+      title: "Tuts+ Awesomeproject",
+      componet: Home,
+      leftButton: LogoutButton,
+      rightButtom: PostButton,
+      hideNavigationBar: false,
+      StatusBarStyle: "Light-content"
+    }
+  }
+
+  login(){
+    return{}
   }
 }
 

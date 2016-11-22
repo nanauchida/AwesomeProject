@@ -21,32 +21,30 @@ const styles = StyleSheet.create({
     backgroundColor: StyleVars.Colors.navBarBackground,
     borderBottomColor:"rgba(255,255,255,0.5)",
     borderBottomWidth: 1
-  }
-
+  },
   buttonStyle: { marginTop: 13 },
   titleStyle;{marginTop: 10 }
 });
 
 const NavigationBarRouteMapper = {
-
-  LeftButton: function(route,navigator, index, navState){
-  retun route.leftButton ? (
-    <route.leftButton
-    style={styles.buttonStyle}
-    navigator={navigator}
-    route={route}
-    />
-  ): null;
+  LeftButton: function (route,navigator, index, navState){
+  　retun route.leftButton ? (
+  　  <route.leftButton
+    　　style={styles.buttonStyle}
+  　　  navigator={navigator}
+    　　route={route}
+    　/>
+  )　: null;
   },
-  Title: function (route, navigator, index, navState){
-    return route.title ? (
+    Title: function (route, navigator, index, navState){
+     return route.title ? (
       <Text
       style={[styles.titleStyle, SharedStyles.navBarTitleText]}
       numberOfLines={1}
       >{route.title}</Text>
     ): null;
   },
-  RightButtom: function (route, navigator, index, navState){
+   RightButtom: function (route, navigator, index, navState){
     return route.rightButtom ? (
       <route.rightButtom
       style={styles.buttonStyle}
@@ -77,13 +75,14 @@ export default class RootNavigator extends React.Component {
       this._setupRoute(route.currentTarget.currentRoute);
     }
 
-  render(){
+    render(){
     let navigationBar = (
       <Navigator.navigationBar
       routeMapper={}
       style={styles.navBar}
       />
     )
+  }
 
     return (
         <Navigator
@@ -94,6 +93,7 @@ export default class RootNavigator extends React.Component {
         />
     );
   }
+}
 
   renderScene(route, navigator){
     let style = route.hideNavigationBar ? { paddingTop: 0 } : {};
@@ -165,4 +165,3 @@ _setNavigatorRef(navigator){
         this.setState(state);
       }
     }
- }
