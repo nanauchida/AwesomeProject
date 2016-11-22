@@ -13,17 +13,17 @@ export default StyleSheet.create({
     fontSize: 16,
     fontweight: "600"
   },
- text:{
-   color: StyleVars.colors.primaryText,
-   fontFamily: StyleVars.Fonts.general,
-   fontSize: 12,
-   fontweight: "400"
- },
- navBarTitleText: {
-   color: StyleVars.Colors.navBarTitle,
-   fontFamily: StyleVars.Fonts.heading,
-   fontweight: "600",
-   fontSize: 18,
-   lineHeight: 22
- }
+  text:{
+    color: StyleVars.colors.primaryText,
+    fontFamily: StyleVars.Fonts.general,
+    fontSize: 12,
+    fontweight: "400"
+  },
+  navBarTitleText: {
+    color: StyleVars.Colors.navBarTitle,
+    fontFamily: StyleVars.Fonts.heading,
+    fontweight: "600",
+    fontSize: 18,
+    lineHeight: 22
+  }
 });

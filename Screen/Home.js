@@ -24,13 +24,12 @@ const styles = StyleSheet.create({
   button:{ width:256 }
 });
 
-
 export default class Home extends React.Component{
   constructor(props){
     super(props);
       this.state = {
         loaded: false,
-        failed: true
+        failed: true  
     };
   }
 
@@ -49,12 +48,12 @@ ComponentDidMout(){
 
   render(){
     if(this.state.failed){
-   return(
+   return (
    <View style={[ShareStyle.screenContainer,style.buttonContainer]}
    <Text style= {[ShareStyle.headingText, styles.reloadText]}>
-      Counldn not fect posts.
-    </Text >
-    <Button onPress={()=> _retryFetch()} style={styles.button} >
+      Could not fetch posts.
+    </Text>
+    <Button onPress={() => this._retryFetch()} style={styles.button} >
       Retry Now
      </Button>
   </View>

@@ -26,12 +26,12 @@ const styles = StyleSheet.create({
 
 export default class LoadingView extends React.Component{
   render(){
-    if(this.props.backgroundColor)
-    var containerStyle = {backgroundColor: this.props.backgroundColor };
+     if(this.props.backgroundColor)
+     var containerStyle = {backgroundColor: this.props.backgroundColor };
 
-    return(
+     return(
        <View Style={[style.container, containerStyle]}>
-       <ActivityIndicatorIOS color={StyleVars.Colors.promary} />
+       <ActivityIndicatorIOS color=　{StyleVars.Colors.promary} />
        <Text style= {styles.text}>{this.props.children}</Text>
        </View>
      );

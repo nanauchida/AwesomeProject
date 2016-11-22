@@ -14,7 +14,74 @@ import Actions from 'Awesomeproject/Actions';
 import Button  from 'Awesomeproject/Views/Button';
 import StyleVars from 'Awesomeproject/StyleVars';
 
-const style = StyleSheet.create({});
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: StyleVars.Colors.promary
+  },
+  scrollView: {
+    position: "absolute",
+    top:0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    flex: 1,
+    backgroundColor: StyleVars.Colors.promary,
+    overflow: "visible"
+  },
+  innerContainer:{
+    flex: 1,
+    flexDirection:"column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: windowHeight,
+    width: windowWidth,
+    backgroundColor:StyleVars.Colors.promary
+  },
+  tpLogo:{
+    width: windowWidth * 0.25,
+    height: windowWidth * 0.25,
+    tintColor: StyleVars.Colors.secondary
+  },
+socialText:{
+  color: "white",
+  fontSize: 30,
+  marginTop:8,
+  fontweight: "600",
+  fontFamily: StyleVars.Fonts.logo,
+  marginBottom: 15,
+},
+horizontaLine:{
+  flex: 1,
+  height: 1,
+  marginTop: 2,
+  mariginHorizontal: 10,
+  backgroundColor: "rgba(255,255,255,0.2)"
+},
+footer:{
+  positon:"absolute",
+  bottom: 0,
+  leftL 0,
+  right: 0,
+  height: 48,
+  alignItems: "center"
+  paddingVertical: 15,
+  backgroundColor: "riba(255,255,0.1)",
+  borderTopwidth: 1,
+  borderTopColor: "rgba(255,255,255,0.5)"
+}
+footerText:{
+  color:"white",
+  fontFamily: StyleVars.Fonts.general,
+  fontSize: 14
+},
+footerActionText: {
+  fontweight:"600"
+}
+});
 
 export default class Login extends React.component {
   constructor(props){

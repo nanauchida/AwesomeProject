@@ -12,7 +12,11 @@ let actions = Reflux.createActions([
 
 
 actions.auth.listen(function(){
-  return AccessToken.get();
+  return AccessToken.get()
+     .then((token)=> actions.login(token))
+     .catch ((err) => actions.logout());
+
+
 });
 
 actions.unauth.listen(function(){
