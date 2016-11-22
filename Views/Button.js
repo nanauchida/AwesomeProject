@@ -3,7 +3,8 @@ import React,{
   StyleSheet,
   PropTypes,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  View
 }from 'react-native';
 
 
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontFamily: StyleVars.Fonts.general,
     fontSize: 14,
-    fontweight: "400"
+    fontWeight: "400"
   }
 });
 
@@ -39,9 +40,9 @@ export default class Button extends React.Component{
     activeOpacity={this.props.activeOpacity}
     onPress={() => this.onPress()}
     style={styles.button}
-  >
+    >
 
-     <Text style={textStyle}>{this.props.children}</Text>
+     <Text style={textStyle}>{this.props.children}　</Text>
    </TouchableOpacity>
  );
 }
@@ -59,7 +60,7 @@ Button.propTypes = {
   textStyle: View.propsTypes.style,
   activeOpacity: propTypes.number,
   enabled: propTypes.bool,
-  children: propTypes.strign
+  children: propTypes.string
 }
 
 Button.defaultProps = {
@@ -67,7 +68,7 @@ Button.defaultProps = {
   style: {},
   textStyle: {},
   activeOpacity: 0.8,
-  enbaled: true
+  enabled: true
 };
 
 
