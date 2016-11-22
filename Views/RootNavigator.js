@@ -5,12 +5,11 @@ import React,{
   StyleSheet,
   Text,
   View
-}from 'react-native';
+} from 'react-native';
 
 
 import StyleVeras from 'Awesomeproject/StyleVars';
 import SharedStyles from 'Awesomeproject/SharedStyles';
-
 
 const styles = StyleSheet.create({
   sceneContainer: {
@@ -58,18 +57,17 @@ const NavigationBarRouteMapper = {
 export default class RootNavigator extends React.Component {
   constructor(props){
     super(props){
-      　this.state = { hideNavigationBar: false };
+          　this.state = { hideNavigationBar: false };
     }
 
     ComponentDidMout(){
       　this._setupRoute(this._getInitialRoute());
     }
 
-    componetWillUnmount(){
-      if (this._listeners)
-      　this._listners.forEach((listener)=> listener.remove());
+    componentWillUnmount(){
+       if (this._listeners)
+       　this._listners.forEach((listener)=> listener.remove());
     }
-
 
     onNavwillFocus(route){
       　this._setupRoute(route.currentTarget.currentRoute);
@@ -85,19 +83,19 @@ export default class RootNavigator extends React.Component {
   　}
 
     return (
-        <Navigator
-        ref={(navigator) => this._setNavigatorRef(navigator)}
-        initialRoute={this._getInitialRoute()}
-        renderScene={(route, navigator) => this.renderScene(route, navigator)
-        navigationBar={this.state.hideNavigationBar ? null : navigationBar}}
-        />
+       <Navigator
+         ref={(navigator) => this._setNavigatorRef(navigator)}
+         initialRoute={this._getInitialRoute()}
+         renderScene={(route, navigator) => this.renderScene(route, navigator)
+         navigationBar={this.state.hideNavigationBar ? null : navigationBar}}
+       />
     );
   }
 }
 
 renderScene(route, navigator){
-    let style = route.hideNavigationBar ? { paddingTop: 0 } : {};
-    　retun(
+     let style = route.hideNavigationBar ? { paddingTop: 0 } : {};
+  　 retun(
     　  <View styles={[styles.sceneContainer, style]}>
     　  <route.component
     　  navigator={navigator}
@@ -107,8 +105,7 @@ renderScene(route, navigator){
     　  replaceRoute={(route, args) => this.replaceRoute(route, args)}
     　  />
     　　</view>
-    　)
-
+     )
 
 　　back(){
   　　　this.navigator.pop();
@@ -134,23 +131,23 @@ renderScene(route, navigator){
 　　}
 
 　　_setNavigatorRef(navigator){
-  　  if(navigator !== this.navigator){
+  　   if(navigator !== this.navigator){
   　    this.navigator = navigator;
 
-      if(navigator){
-       this._listeners = [
-        navigator.nabigationContext.addListener("willfocus",this.onNavwillFocus.bind(this))
-      };
-    }else{
-    　if(this._listeeners)
-      this._listeners.forEach((listener) => listener.remove());
-    　}
-  　}
- }
+       if(navigator){
+        this._listeners = [
+       navigator.nabigationContext.addListener("willfocus",this.onNavwillFocus.bind(this))
+       };
+       }else{
+    　 if(this._listeeners)
+        this._listeners.forEach((listener) => listener.remove());
+      }
+   }
+}
 
-   _setupRoute(route){
-     if (route){
-      let state = {};
+    _setupRoute(route){
+      if (route){
+       let state = {};
 
       if (route.hideNavigationBar && this.state.hideNavigationBar !== route.hideNavigationBar)
             state.hideNavigationBar = route.;
@@ -162,5 +159,5 @@ renderScene(route, navigator){
 
        }
         this.setState(state);
-     }
-   }
+       }
+    }
