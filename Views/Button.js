@@ -36,7 +36,7 @@ export default class Button extends React.Component{
 
 
     return(
-    <TounchableOpacity
+    <TouchableOpacity
     activeOpacity={this.props.activeOpacity}
     onPress={() => this.onPress()}
     style={styles.button}

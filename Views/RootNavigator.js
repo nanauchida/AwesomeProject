@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     borderBottomColor:"rgba(255,255,255,0.5)",
     borderBottomWidth: 1
   },
-  buttonStyle: { marginTop: 13 },
-  titleStyle;{marginTop: 10 }
+  　buttonStyle: { marginTop: 13 },
+  　titleStyle;{marginTop: 10 }
 });
 
 const NavigationBarRouteMapper = {
@@ -34,55 +34,55 @@ const NavigationBarRouteMapper = {
   　　  navigator={navigator}
     　　route={route}
     　/>
-  )　: null;
+  　)　: null;
   },
-    Title: function (route, navigator, index, navState){
-     return route.title ? (
+  Title: function (route, navigator, index, navState){
+    return route.title ? (
       <Text
       style={[styles.titleStyle, SharedStyles.navBarTitleText]}
       numberOfLines={1}
       >{route.title}</Text>
     ): null;
   },
-   RightButtom: function (route, navigator, index, navState){
+  RightButtom: function (route, navigator, index, navState){
     return route.rightButtom ? (
       <route.rightButtom
-      style={styles.buttonStyle}
-        navigator={navigator}
-        route={route}
-        />
-      ) : null;
+      　style={styles.buttonStyle}
+      　navigator={navigator}
+      　route={route}
+      />
+    ) : null;
   }
 };
 
 export default class RootNavigator extends React.Component {
-    constructor(props){
+  constructor(props){
     super(props){
-      this.state = { hideNavigationBar: false };
+      　this.state = { hideNavigationBar: false };
     }
 
     ComponentDidMout(){
-      this._setupRoute(this._getInitialRoute());
+      　this._setupRoute(this._getInitialRoute());
     }
 
     componetWillUnmount(){
       if (this._listeners)
-      this._listners.forEach((listener)=> listener.remove());
-      }
+      　this._listners.forEach((listener)=> listener.remove());
+    }
 
 
     onNavwillFocus(route){
-      this._setupRoute(route.currentTarget.currentRoute);
+      　this._setupRoute(route.currentTarget.currentRoute);
     }
 
     render(){
-    let navigationBar = (
-      <Navigator.navigationBar
-      routeMapper={}
-      style={styles.navBar}
-      />
-    )
-  }
+    　let navigationBar = (
+    　  <Navigator.navigationBar
+      　　routeMapper={}
+      　　style={styles.navBar}
+      　/>
+    　)
+  　}
 
     return (
         <Navigator
@@ -95,73 +95,72 @@ export default class RootNavigator extends React.Component {
   }
 }
 
-  renderScene(route, navigator){
+renderScene(route, navigator){
     let style = route.hideNavigationBar ? { paddingTop: 0 } : {};
-    retun(
-      <View styles={[styles.sceneContainer, style]}>
-      <route.component
-      navigator={navigator}
-      back={() => this.back()}
-      backToHome={() => this.backToHome()}
-      toRoute={(route, args) => this.toRoute(route, args)}
-      replaceRoute={(route, args) => this.replaceRoute(route, args)}
-      />
-    </view>
-    )
-  }
+    　retun(
+    　  <View styles={[styles.sceneContainer, style]}>
+    　  <route.component
+    　  navigator={navigator}
+    　  back={() => this.back()}
+    　  backToHome={() => this.backToHome()}
+    　  toRoute={(route, args) => this.toRoute(route, args)}
+    　  replaceRoute={(route, args) => this.replaceRoute(route, args)}
+    　  />
+    　　</view>
+    　)
 
-back(){
-  this.navigator.pop();
-}
 
-backToHome(){
-  this.navigator.paoToTop();
-}
+　　back(){
+  　　　this.navigator.pop();
+　　}
 
-toRoute(route, args){
-  if("string" != typeof route || (route = Routes.get(route, args)))
-  this.navigator.push(route);
-  }
-}
+　　backToHome(){
+  　　　this.navigator.paoToTop();
+　　}
 
-replaceRoute(route,args){
-  if("string" != typeof route || (route = Routes.get(route,args)))
-  this.navigator.relpace(route);
- }
-}
+　　toRoute(route, args){
+　  　if("string" != typeof route || (route = Routes.get(route, args)))
+　  　　this.navigator.push(route);
+　　}
 
-_getInitialRoute(){
-  return Routes.home();
-}
+　　replaceRoute(route,args){
+  　　if("string" != typeof route || (route = Routes.get(route,args)))
+  　　　this.navigator.relpace(route);
+ 　}
 
-_setNavigatorRef(navigator){
-    if(navigator !== this.navigator){
-      this.navigator = navigator;
 
-    if(navigator){
-      this._listeners = [
+　　_getInitialRoute(){
+  　　return Routes.home();
+　　}
+
+　　_setNavigatorRef(navigator){
+  　  if(navigator !== this.navigator){
+  　    this.navigator = navigator;
+
+      if(navigator){
+       this._listeners = [
         navigator.nabigationContext.addListener("willfocus",this.onNavwillFocus.bind(this))
-      ];
+      };
     }else{
-      if(this._listeeners)
+    　if(this._listeeners)
       this._listeners.forEach((listener) => listener.remove());
-    }
-  }
-}
+    　}
+  　}
+ }
 
- _setupRoute(route){
-   if (route){
-     let state = {};
+   _setupRoute(route){
+     if (route){
+      let state = {};
 
-        if (route.hideNavigationBar && this.state.hideNavigationBar !== route.hideNavigationBar)
+      if (route.hideNavigationBar && this.state.hideNavigationBar !== route.hideNavigationBar)
             state.hideNavigationBar = route.;
 
-        if (route.statusBarStyle && this.state.statusBarStyle ! == route.statusBarStyle){
+      if (route.statusBarStyle && this.state.statusBarStyle ! == route.statusBarStyle){
             state.StatusBarStyle = route.statusBarStyle;
             StatusBar.setBarStyle(route.statusBarStyle,true);
             StatusBar.setHidden(false, "slide");
 
-        }
+       }
         this.setState(state);
-      }
-    }
+     }
+   }

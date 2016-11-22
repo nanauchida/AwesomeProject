@@ -15,7 +15,7 @@ class Routes {
   }
 
   home(){
-  return {
+   return {
     name: "home",
     title: "Tuts + Awesomeproject",
     Component: Home,
@@ -23,7 +23,7 @@ class Routes {
     rightButtom: post,
     hideNavigationBar: false,
     StatusBarStyle: "Light-content"
-    }
+   }
   }
 
   login() {
