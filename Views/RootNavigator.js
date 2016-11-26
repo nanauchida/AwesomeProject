@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1
   },
   　buttonStyle: { marginTop: 13 },
-  　titleStyle;{marginTop: 10 }
+  　titleStyle: {marginTop: 10 }
 });
 
 const NavigationBarRouteMapper = {
@@ -107,24 +107,23 @@ renderScene(route, navigator){
     　　</view>
      )
 
-　　back(){
+　　 back(){
   　　　this.navigator.pop();
-　　}
+　　 }
 
-　　backToHome(){
+　　 backToHome(){
   　　　this.navigator.paoToTop();
-　　}
+　　 }
 
-　　toRoute(route, args){
+　　 toRoute(route, args){
 　  　if("string" != typeof route || (route = Routes.get(route, args)))
 　  　　this.navigator.push(route);
-　　}
+　　 }
 
 　　replaceRoute(route,args){
   　　if("string" != typeof route || (route = Routes.get(route,args)))
   　　　this.navigator.relpace(route);
- 　}
-
+ 　 }
 
 　　_getInitialRoute(){
   　　return Routes.home();
@@ -142,22 +141,22 @@ renderScene(route, navigator){
     　 if(this._listeeners)
         this._listeners.forEach((listener) => listener.remove());
       }
-   }
+  }
 }
 
     _setupRoute(route){
       if (route){
        let state = {};
 
-      if (route.hideNavigationBar && this.state.hideNavigationBar !== route.hideNavigationBar)
+        if (route.hideNavigationBar && this.state.hideNavigationBar !== route.hideNavigationBar)
             state.hideNavigationBar = route.;
 
-      if (route.statusBarStyle && this.state.statusBarStyle ! == route.statusBarStyle){
+        if (route.statusBarStyle && this.state.statusBarStyle ! == route.statusBarStyle){
             state.StatusBarStyle = route.statusBarStyle;
             StatusBar.setBarStyle(route.statusBarStyle,true);
             StatusBar.setHidden(false, "slide");
 
-       }
+        }
         this.setState(state);
-       }
+      }
     }

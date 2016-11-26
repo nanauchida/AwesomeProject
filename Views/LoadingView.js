@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: StyleVars.Colors.mediunBackground
   },
-  text: {
+  text:{
     fontFamily: StyleVars.Founts.general,
     color: StyleVars.Colors.primary,
     texAligh: "center",
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 export default class LoadingView extends React.Component{
   render(){
      if(this.props.backgroundColor)
-     var containerStyle = {backgroundColor: this.props.backgroundColor };
+     var containerStyle = {backgroundColor: this.props.backgroundColor};
 
      return(
        <View Style={[style.container, containerStyle]}>

@@ -34,31 +34,23 @@ export default class Home extends React.Component {
   }
 
 ComponentWillMount(){
+  Actions.loaduser.completed.listen(this._onLoadUserCompleted.bird(this));
+  Actions.logout.listen(this._onLogout.bind(this));
 }
 
-ComponentDidMout(){
-  Actions.auth();
-}
-
-
-
-  Actions.loaduser.completed.listen(this._onLoadUserCompleted.bring(this));
-  Actions.logout.listen(this._onLogout.bring(this));
-}
-
-  render(){
-    if(this.state.failed){
+render(){
+  if(this.state.failed){
    return (
-   <View style={[ShareStyle.screenContainer,style.buttonContainer]}
-   <Text style= {[ShareStyle.headingText, styles.reloadText]}>
+    <View style={[ShareStyle.screenContainer,style.buttonContainer]}
+    <Text style= {[ShareStyle.headingText, styles.reloadText]}>
       Could not fetch posts.
     </Text>
     <Button onPress={() => this._retryFetch()} style={styles.button} >
       Retry Now
-     </Button>
-  </View>
+    </Button>
+   </View>
+  );
 
-    );
   } else if(this.state.loaded){
     return <View style={SharedStyles.screenContainer} />;
   }else{
@@ -70,13 +62,14 @@ ComponentDidMout(){
     }
   }
 
-_retryFetch(){
+ _retryFetch(){
   //TODO: Initiate another fetch from the server
  }
-_onLoadUserCompleted(user){
+ _onLoadUserCompleted(user){
 
-}
-_onLogout(){
-  this,props.replaceRoute(Routes.login()));
+ }
+
+ _onLogout(){
+  this.props.replaceRoute(Routes.login());
   }
 }

@@ -1,39 +1,38 @@
 'use strict';
-import React,(
+import React,{
   AsyncStorage
-}from 'react-native'
+}from 'react-native';
 
 class AccessToken{
   get(){
-    return new Pormise(next, prror )=>{
+    return new Promise(next, error )=>{
       if(this._accessToken) return next(this._accessToken);
 
-      AsyncStorage.getItem("ACCESS_TOKEN")
-           .then((token)=> {
+        AsyncStorage.getItem("ACCESS_TOKEN")
+        .then((token) => {
              if(token){
                next(token);
              }else{
-               error() ;
+               error();
              }
-           })
-
-           .catch((err)=> error(err));
+          })
+         .catch((err)=> error(err));
     });
   }
 
 
-  set(token){
+  set(token) {
     this._accessToken = token;
     return AsyncStorage.setItem("ACCESS_TOKEN", token);
 
   }
 
 
-clear(){
-  this._accessToken = null;
-  return AsyncStorage.removeItem("ACCESS_TOKEN");
+  clear(){
+   this._accessToken = null;
+   return AsyncStorage.removeItem("ACCESS_TOKEN");
 
- }
+  }
 }
 
 export default new Access Token()

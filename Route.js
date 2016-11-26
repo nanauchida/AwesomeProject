@@ -11,7 +11,7 @@ class Routes {
       return false;
     }else{
       return this[route].call(this, args);
-    }
+     }
   }
 
   home(){
@@ -28,18 +28,15 @@ class Routes {
 
   login() {
     return {
-      name: "home",
-      title: "Tuts+ Awesomeproject",
-      componet: Home,
+      name: "login",
+      title: "Login",
+      component: Home,
       leftButton: LogoutButton,
       rightButtom: PostButton,
       hideNavigationBar: false,
       StatusBarStyle: "light-content"
     }
   }
-}
-\
-  }
-}
 
+l
 export default new Routes()
